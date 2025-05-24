@@ -24,15 +24,10 @@ public struct Book: Equatable, Comparable, Hashable, Identifiable, CustomStringC
                lhs.price == rhs.price
     }
     
-    // Comparableの実装
+    // Comparableの実装（タイトルのアルファベット順）
     public static func < (lhs: Book, rhs: Book) -> Bool {
-        if lhs.title != rhs.title {
-            return lhs.title < rhs.title
-        }
-        return lhs.author < rhs.author
+        return lhs.title.localizedStandardCompare(rhs.title) == .orderedAscending
     }
-    
-    // Hashableの実装は自動的に提供されます
     
     // CustomStringConvertibleの実装
     public var description: String {
@@ -42,6 +37,14 @@ public struct Book: Equatable, Comparable, Hashable, Identifiable, CustomStringC
     // CustomDebugStringConvertibleの実装
     public var debugDescription: String {
         return "Book(id: \(id), title: \(title), author: \(author), publishedYear: \(publishedYear), price: \(price))"
+    }
+    
+    // Hashableの実装（Equatableと同じ属性を使用）
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(title)
+        hasher.combine(author)
+        hasher.combine(publishedYear)
+        hasher.combine(price)
     }
 }
 

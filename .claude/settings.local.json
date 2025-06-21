@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(rm:*)",
+      "WebFetch(domain:swiftpackageindex.com)",
+      "WebFetch(domain:github.com)",
+      "Bash(swift build)",
+      "Bash(rg:*)"
+    ],
+    "deny": []
+  }
+}

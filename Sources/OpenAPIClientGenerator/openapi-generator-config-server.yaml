@@ -1,0 +1,12 @@
+# サーバー生成設定の例
+generate:
+  - types      # データ型を生成
+  - server     # サーバーコードを生成
+
+# アクセス修飾子の設定
+accessModifier: public
+
+# サーバー生成時の追加設定
+# featureFlags:
+#   - ExperimentalObjectOneOf
+#   - ExperimentalAllOf

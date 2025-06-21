@@ -1,0 +1,12 @@
+# 基本的なクライアント生成設定
+generate:
+  - types      # データ型を生成
+  - client     # クライアントコードを生成
+
+# アクセス修飾子の設定 (internal, public, package)
+accessModifier: public
+
+# 追加設定（オプション）
+# featureFlags:
+#   - ExperimentalObjectOneOf  # OneOf サポート（実験的）
+#   - ExperimentalAllOf        # AllOf サポート（実験的）

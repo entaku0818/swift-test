@@ -6,7 +6,8 @@
       "WebFetch(domain:swiftpackageindex.com)",
       "WebFetch(domain:github.com)",
       "Bash(swift build)",
-      "Bash(rg:*)"
+      "Bash(rg:*)",
+      "Bash(mv:*)"
     ],
     "deny": []
   }

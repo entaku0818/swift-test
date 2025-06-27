@@ -186,8 +186,14 @@ public class SoccerTeamUsageExample {
             
             // 統計情報を更新
             var updatedPlayer = player
-            updatedPlayer.stats?.goals = (updatedPlayer.stats?.goals ?? 0) + 1
-            updatedPlayer.stats?.appearances = (updatedPlayer.stats?.appearances ?? 0) + 1
+            let currentStats = updatedPlayer.stats
+            updatedPlayer.stats = Components.Schemas.PlayerStats(
+                goals: (currentStats?.goals ?? 0) + 1,
+                assists: currentStats?.assists ?? 0,
+                yellowCards: currentStats?.yellowCards ?? 0,
+                redCards: currentStats?.redCards ?? 0,
+                appearances: (currentStats?.appearances ?? 0) + 1
+            )
             
             let finalPlayer = try await client.updatePlayer(id: 9, player: updatedPlayer)
             print("選手の統計が更新されました: \(finalPlayer.name)")

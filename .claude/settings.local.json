@@ -7,7 +7,10 @@
       "WebFetch(domain:github.com)",
       "Bash(swift build)",
       "Bash(rg:*)",
-      "Bash(mv:*)"
+      "Bash(mv:*)",
+      "WebFetch(domain:developer.apple.com)",
+      "Bash(swift test:*)",
+      "Bash(git add:*)"
     ],
     "deny": []
   }
